@@ -20,7 +20,7 @@ from collections import OrderedDict
 
 class youParser:
     def __init__(self, _url):
-        self.url = _url
+        self.url = _url.replace('youtu.be/', 'youtube.com/watch?v=')
         if 'http' not in self.url:
             self.url = 'http://' + self.url
 
