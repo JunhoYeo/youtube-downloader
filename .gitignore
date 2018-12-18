@@ -1,5 +1,8 @@
 .vscode/
+.DS_Store
+
 *.webm
 *.mp3
+
 __pycache__
-.DS_Store
+*.pyc
