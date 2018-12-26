@@ -11,13 +11,14 @@ ydl_opts = {
     }],
 }
 with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-    if len(sys.argv) != 2:
-        playlist = 'playlist-URL'
+    length = len(sys.argv)
+    if length < 2:
+        playlist = input('Playlist URL > ')
         playlist = youParser(playlist)
         playlist = playlist.crawl()
-        playlist += [
-            'video-URL'
-        ]
-    else: playlist = [sys.argv[1]]
+        # playlist += [
+        #     'video-URL'
+        # ]
+    else: playlist = [sys.argv[i] for i in range(1, length)]
     print(playlist)
     ydl.download(playlist)
