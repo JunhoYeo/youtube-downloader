@@ -1,6 +1,6 @@
 # Copyright (c) 2018, JunhoYeo (GPLv3)
 # https://github.com/JunhoYeo/youtube-downloader
-import sys, youtube_dl
+import os, sys, youtube_dl
 from youParse import *
 
 ydl_opts = {
@@ -22,3 +22,4 @@ with youtube_dl.YoutubeDL(ydl_opts) as ydl:
     else: playlist = [sys.argv[i] for i in range(1, length)]
     print(playlist)
     ydl.download(playlist)
+    os.system('mv *.mp3 ~/Music/ && open ~/Music')
